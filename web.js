@@ -2,11 +2,18 @@ var express = require('express');
 var fs = require('fs');
 var app = express.createServer(express.logger());
 
-app.get('/', function(request, response) {
-console.log(request);
-  var getFile = fs.readFileSync('index.html');
+var fileToString = function(filename) {
+  var getFile = fs.readFileSync(filename);
   var buffer = new Buffer(getFile);
-  response.send(buffer.toString());
+  return buffer.toString();
+};
+
+app.get('/', function(request, response) {
+  response.send(fileToString('index.html')));
+});
+
+app.get('/basic.css', function(request, response) {
+  response.send(fileToString('basic.css'));
 });
 
 var port = process.env.PORT || 5000;
