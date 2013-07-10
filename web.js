@@ -13,6 +13,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/basic.css', function(request, response) {
+  response.set('Content-Type', 'text/css');	
   response.send(fileToString('basic.css'));
 });
 
