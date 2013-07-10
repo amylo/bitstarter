@@ -9,7 +9,7 @@ var fileToString = function(filename) {
 };
 
 app.get('/', function(request, response) {
-  response.send(fileToString('index.html')));
+  response.send(fileToString('index.html'));
 });
 
 app.get('/basic.css', function(request, response) {
