@@ -12,7 +12,7 @@ app.get('/', function(request, response) {
   response.send(fileToString('index.html'));
 });
 
-app.get('/basic.css', function(request, response) {
+app.get('/style.css', function(request, response) {
   response.setHeader('Content-Type', 'text/css');	
   response.send(fileToString('basic.css'));
 });
